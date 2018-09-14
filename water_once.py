@@ -3,7 +3,6 @@
 # Start by importing the libraries we want to use
 import RPi.GPIO as GPIO # This is the GPIO library we need to use the GPIO pins on the Raspberry Pi
 import time # This is the time library, we need this so we can use the sleep function
-import datetime # Used to output the time and date of events
 
 # Set our GPIO numbering to BCM
 GPIO.setmode(GPIO.BCM)
@@ -25,8 +24,6 @@ for i in relayPinList:
     GPIO.setup(i, GPIO.OUT)
     GPIO.output(i, GPIO.HIGH)
 
-# record current time
-timeNow = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 #pump that water boi
 GPIO.output(2, GPIO.LOW)
 print "relay 1 has been turned on"
@@ -34,4 +31,4 @@ time.sleep(pumpTimeOn);
 GPIO.output(2, GPIO.HIGH)
 print "relay 1 has been turned off"
 plantLog = open("new-plant-log.csv","a")
-plantLog.write(timeNow + "," + "water duration: ," + str(pumpTimeOn))
+plantLog.write(time.ctime() + "," + "water duration: ," + str(pumpTimeOn) + "\n")
