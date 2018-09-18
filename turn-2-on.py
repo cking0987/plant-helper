@@ -4,7 +4,7 @@ import RPi.GPIO as GPIO # This is the GPIO library we need to use the GPIO pins 
 GPIO.setmode(GPIO.BCM)
 
 #set current pin location
-currentPin = 2
+currentPin = 3
 
 #set mode and state to HIGH
 GPIO.setup(currentPin, GPIO.OUT)

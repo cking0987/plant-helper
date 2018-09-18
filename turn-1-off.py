@@ -12,4 +12,7 @@ GPIO.output(currentPin, GPIO.HIGH)
 
 #turn it on
 GPIO.output(currentPin, GPIO.HIGH)
-print "relay at pin number " + currentPin + " has been turned off"
+print "relay at pin number ", currentPin, " has been turned off"
+
+# Reset GPIO settings
+GPIO.cleanup()
