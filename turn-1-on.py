@@ -12,4 +12,4 @@ GPIO.output(currentPin, GPIO.HIGH)
 
 #turn it on
 GPIO.output(currentPin, GPIO.LOW)
-print "relay at pin number " + currentPin " has been turned on"
+print "relay at pin number " + currentPin + " has been turned on"
